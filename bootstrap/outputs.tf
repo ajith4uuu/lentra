@@ -1,3 +1,7 @@
+output "CICD" {
+  description = "Shared folder outputs"
+  value       = google_folder.CICD
+}
 output "bootstrap" {
   description = "Terraform folder outputs"
   value       = google_folder.bootstrap
