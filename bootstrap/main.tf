@@ -1,19 +1,19 @@
 locals {
-  org_id           = "797721931143"
-  billing_account  = "0138FE-468F00-64F90B"
-  bucket_location  = "EU"
+  org_id           = "922513229562"
+  billing_account  = "014849-61A54E-7653CA"
+  bucket_location  = "IN"
   package_versions = jsondecode(file("${path.module}/cloudbuild_builder/packageVersions.json"))
   replica_locations_for_secrets = toset([
-    "europe-west1",
-    "europe-west3"
+    "asia-south1",
+    "asia-south2"
   ])
 }
 
 ### Core ###
 
 # Create folder at root of org (eg. /shared)
-resource "google_folder" "shared" {
-  display_name = "shared"
+resource "google_folder" "CICD" {
+  display_name = "CICD"
   parent       = "organizations/${local.org_id}"
 }
 
@@ -25,14 +25,14 @@ resource "google_folder" "bootstrap" {
 
 # Create project on sub-folder level (eg. /shared/bootstrap/gclt-shr-terraform-XXXX)
 module "project" {
-  source = "github.com/colt-net/terraform-modules//stacks/project?ref=v1.0.0"
+  source = "github.com/ajith4uuu/terraform-modules//stacks/project"
 
   folder_id       = google_folder.bootstrap.id
   billing_account = local.billing_account
 
-  prefix_id = "gclt"
+  prefix_id = "lentra"
   labels = {
-    email          = "platform.support@colt.net"
+    email          = "atenneti@lentra.ai"
     costid         = ""
     live           = "yes"
     environment    = "shr"
@@ -181,8 +181,8 @@ resource "google_cloudbuild_trigger" "master" {
   description = "terragrunt apply on push to master"
 
   github {
-    owner = "colt-net"
-    name  = "cloudfoundation-iac"
+    owner = "ajith4uuu"
+    name  = "lentra"
     push {
       branch = "^main$"
     }
@@ -205,8 +205,8 @@ resource "google_cloudbuild_trigger" "pull_requests" {
   description = "terragrunt plan on pull requests"
 
   github {
-    owner = "colt-net"
-    name  = "cloudfoundation-iac"
+    owner = "ajith4uuu"
+    name  = "lentra"
     pull_request {
       branch = "^main$"
     }
