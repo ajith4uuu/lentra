@@ -1,7 +1,7 @@
 locals {
   org_id           = "922513229562"
   billing_account  = "014849-61A54E-7653CA"
-  bucket_location  = "IN"
+  bucket_location  = "ASIA"
   package_versions = jsondecode(file("${path.module}/cloudbuild_builder/packageVersions.json"))
   replica_locations_for_secrets = toset([
     "asia-south1",
