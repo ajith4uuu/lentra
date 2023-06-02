@@ -1,8 +1,3 @@
-output "shared" {
-  description = "Shared folder outputs"
-  value       = google_folder.shared
-}
-
 output "bootstrap" {
   description = "Terraform folder outputs"
   value       = google_folder.bootstrap
@@ -33,15 +28,15 @@ output "image_builder" {
   value       = module.image_builder
 }
 
-# output "trigger_master" {
-#   description = "Cloud Build trigger for master branch"
-#   value       = google_cloudbuild_trigger.master
-# }
+output "trigger_master" {
+  description = "Cloud Build trigger for master branch"
+  value       = google_cloudbuild_trigger.master
+}
 
-# output "trigger_pr" {
-#   description = "Cloud Build trigger for pull requests"
-#   value       = google_cloudbuild_trigger.pull_requests
-# }
+output "trigger_pr" {
+  description = "Cloud Build trigger for pull requests"
+  value       = google_cloudbuild_trigger.pull_requests
+}
 
 output "github_token_id" {
   description = "GitHub token ID that will be used by pipelines"
