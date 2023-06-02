@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "gclt-shr-terraform-state"
+    bucket = "lentra-shr-terraform-state"
     prefix = "bootstrap"
   }
 }
