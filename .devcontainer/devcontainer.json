@@ -1,6 +1,6 @@
 {
-  "name": "AEF Dev Container - this container should already exist and it is built by bootstrap",
-  "image": "eu.gcr.io/gclt-shr-terraform-4df7/shr-deploy-terraform:latest",
+  "name": "Lentra Dev Container - this container should already exist and it is built by bootstrap",
+  "image": "asia.gcr.io/lentra-shr-terraform-4df7/shr-deploy-terraform:latest",
   "containerUser": "developer",
 
   "settings": {
