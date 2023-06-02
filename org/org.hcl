@@ -9,7 +9,7 @@ remote_state {
   backend = "gcs"
   # Same state bucket for for all envs - resources are created in bootstrap folder
   config = {
-    bucket = "gclt-shr-terraform-state"
+    bucket = "lentra-shr-terraform-state"
     prefix = "org/${path_relative_to_include()}/terraform.tfstate"
   }
   generate = {
@@ -34,7 +34,7 @@ provider "google" {
 
 data "google_service_account_access_token" "default" {
   provider               = google.impersonate
-  target_service_account = "gclt-shr-terraform@gclt-shr-terraform-4df7.iam.gserviceaccount.com"
+  target_service_account = "lentra-shr-terraform@gclt-shr-terraform-4df7.iam.gserviceaccount.com"
   scopes                 = ["userinfo-email", "cloud-platform"]
   lifetime               = "600s"
 }
@@ -63,13 +63,13 @@ locals {
 # where terraform_remote_state data sources are placed directly into the modules.
 inputs = {
 
-  billing_account = "0138FE-468F00-64F90B"
-  org_id          = "797721931143"
-  prefix_id       = "gclt"
+  billing_account = "014849-61A54E-7653CA"
+  org_id          = "922513229562"
+  prefix_id       = "lentra"
 
   policy_allowed_domain_ids = [
-    # Colt Cloud Identity Customer ID
-    "C03n1814z"
+    # Lentra Cloud Identity Customer ID
+    "C01p6d4bo"
   ]
 
 }
