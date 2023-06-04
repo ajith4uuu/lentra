@@ -18,7 +18,7 @@ remote_state {
   }
 }
 
-# Generate the GCP provider block - resources are created in bootstrap folder
+# Generate the GCP provider block - resources are created in bootstrap folder in
 generate "gcp-provider" {
   path      = "providers.tf"
   if_exists = "overwrite"
