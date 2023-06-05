@@ -7,7 +7,7 @@
 # Configure Terragrunt to automatically store tfstate files: https://terragrunt.gruntwork.io/docs/features/keep-your-remote-state-configuration-dry/#create-remote-state-and-locking-resources-automatically
 remote_state {
   backend = "gcs"
-  # Same state bucket for for all envs - resources are created in bootstrap folder
+  # Same state bucket for for all envs - resources are created in the bootstrap folder
   config = {
     bucket = "lentra-shr-terraform-state"
     prefix = "org/${path_relative_to_include()}/terraform.tfstate"
