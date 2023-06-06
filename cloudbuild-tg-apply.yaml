@@ -1,5 +1,5 @@
 ---
-timeout: 1800s
+timeout: 3600s
 steps:
   # pre-commit checks
   - name: eu.gcr.io/$PROJECT_ID/shr-deploy-terraform:v1
