@@ -1,6 +1,6 @@
 {
   "name": "Lentra Dev Container - this container should already exist and it is built by bootstrap",
-  "image": "asia.gcr.io/lentra-shr-terraform-4df7/shr-deploy-terraform:latest",
+  "image": "eu.gcr.io/lentra-shr-terraform-0b00/shr-deploy-terraform:latest",
   "containerUser": "developer",
 
   "settings": {
