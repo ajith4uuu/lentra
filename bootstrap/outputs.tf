@@ -1,6 +1,6 @@
-output "CICD" {
+output "Common" {
   description = "Shared folder outputs"
-  value       = google_folder.CICD
+  value       = google_folder.Common
 }
 output "bootstrap" {
   description = "Terraform folder outputs"
