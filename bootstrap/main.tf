@@ -20,7 +20,7 @@ resource "google_folder" "Common" {
 # Create sub-folder (eg. /shared/bootstrap)
 resource "google_folder" "bootstrap" {
   display_name = "bootstrap"
-  parent       = google_folder.shared.id
+  parent       = google_folder.Common.id
 }
 
 # Create project on sub-folder level (eg. /shared/bootstrap/gclt-shr-terraform-XXXX)
