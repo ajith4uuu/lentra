@@ -1,19 +1,19 @@
 locals {
   org_id           = "922513229562"
   billing_account  = "014849-61A54E-7653CA"
-  bucket_location  = "ASIA"
+  bucket_location  = "EU"
   package_versions = jsondecode(file("${path.module}/cloudbuild_builder/packageVersions.json"))
   replica_locations_for_secrets = toset([
-    "asia-south1",
-    "asia-south2"
+    "europe=west3",
+    "europe-west4"
   ])
 }
 
 ### Core ###
 
 # Create folder at root of org (eg. /shared)
-resource "google_folder" "CICD" {
-  display_name = "CICD"
+resource "google_folder" "Common" {
+  display_name = "Common"
   parent       = "organizations/${local.org_id}"
 }
 
@@ -30,7 +30,7 @@ module "project" {
   folder_id       = google_folder.bootstrap.id
   billing_account = local.billing_account
 
-  prefix_id = "lentra"
+  prefix_id = "lent"
   labels = {
     email          = "atenneti@lentra.ai"
     costid         = ""
