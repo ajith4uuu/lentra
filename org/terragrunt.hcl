@@ -34,7 +34,7 @@ provider "google" {
 
 data "google_service_account_access_token" "default" {
   provider               = google.impersonate
-  target_service_account = "lent-shr-terraform@lent-shr-terraform-0b00.iam.gserviceaccount.com"
+  target_service_account = "lent-shr-terraform@lent-shr-terraform-4109.iam.gserviceaccount.com"
   scopes                 = ["userinfo-email", "cloud-platform"]
   lifetime               = "600s"
 }
