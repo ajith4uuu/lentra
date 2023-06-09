@@ -1,3 +1,6 @@
+terraform {
+  source = "github.com/terraform-google-modules/terraform-google-vm"
+}
 inputs = {
   project_id     = "lent-shr-terraform-4109"
   region         = "asia-south1"
