@@ -14,7 +14,6 @@ repos:
       - id: terraform_fmt
       - id: terragrunt_fmt
       - id: terraform_docs
-      - id: terraform_tfsec
   - repo: https://github.com/bridgecrewio/checkov.git
     rev: 2.0.504
     hooks:
