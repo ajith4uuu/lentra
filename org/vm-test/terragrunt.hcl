@@ -1,5 +1,5 @@
 terraform {
-  source = "github.com/terraform-google-modules/terraform-google-vm//modules/compute_instance"
+  source = "github.com/terraform-google-modules/terraform-google-vm//examples/compute_instance/simple"
 }
 inputs = {
   project_id        = "lent-shr-terraform-4109"
