@@ -1,23 +1,18 @@
-terraform {
-  source = "github.com/terraform-google-modules/terraform-google-vm//examples/compute_instance/simple"
+include {
+  path = find_in_parent_folders("org.hcl")
 }
+
+terraform {
+  source = "github.com/ajith4uuu/lentra//cicd-vm-test" # Replace with your Terraform modules repository URL
+}
+
+locals {
+  # project_id = terraform.workspace == "default" ? var.project_id : "${var.project_id}-${terraform.workspace}"
+}
+
 inputs = {
-  project_id        = "lent-shr-terraform-4109"
-  region            = "asia-south1"
-  zone              = "asia-south1-b"
-  instance_name     = "my-instance"
-  machine_type      = "n1-standard-2"
-  boot_disk_size    = 10
-  instance_template = "instance-template-1"
-  image_family      = "debian-10"
-  image_project     = "debian-cloud"
-  network_tags      = ["web-server"]
-  num_instances     = 1
-  network           = "workstations"
-  subnetwork        = "workstations"
-  network_interface = {
-    "0" = {
-      subnetwork_project = "lent-shr-terraform-4109"
-    }
-  }
+  project_id = local.project_id
+  region     = var.region
+  zone       = var.zone
+  vm_name    = var.vm_name
 }
