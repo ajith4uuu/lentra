@@ -3,11 +3,10 @@ include {
 }
 
 terraform {
-  source = "github.com/ajith4uuu/lentra//cicd-vm-test" # Replace with your Terraform modules repository URL
+  source = "github.com/ajith4uuu/terraform-modules//modules/vm-instance" # Replace with your Terraform modules repository URL
 }
 
 locals {
-  project_id = terraform.workspace == "default" ? var.project_id : "${var.project_id}-${terraform.workspace}"
 }
 
 inputs = {
