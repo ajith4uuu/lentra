@@ -7,7 +7,6 @@ terraform {
 }
 
 locals {
-  project_id = terraform.workspace == "default" ? var.project_id : "${var.project_id}-${terraform.workspace}"
 }
 
 inputs = {
