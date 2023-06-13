@@ -8,6 +8,6 @@ include {
 
 inputs = {
   project_id    = "lent-shr-terraform-4109"
-  instance_name = "test-cicd"
+  instance_name = "test-ajith"
   network       = "workstations"
 }
